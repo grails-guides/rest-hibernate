@@ -1,0 +1,7 @@
+import hibernate.example.Product
+
+model {
+	Product product
+}
+
+json tmpl.product(product)
