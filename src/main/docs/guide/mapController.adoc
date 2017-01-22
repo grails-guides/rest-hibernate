@@ -8,7 +8,7 @@ include::{sourceDir}/grails-app/controllers/hibernate/example/UrlMappings.groovy
 
 As you can see above each HTTP verb is mapped such that the controller name is established from the URI itself using the `$controller` syntax.
 
-If you wish to use another name or be explicit about the URI used you can define an additional mapping uses the `resources` mapping:
+If you wish to use another name or be explicit about the URI used you can define an additional mapping using the `resources` mapping:
 
 [source,groovy]
 .grails-app/controllers/hibernate/example/UrlMappings.groovy
