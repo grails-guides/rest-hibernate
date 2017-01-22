@@ -24,4 +24,4 @@ include::{sourceDir}/grails-app/controllers/hibernate/example/UrlMappings.groovy
 
 The above example uses the `collection` method to nest URIs directly underneath the `/products` URI (for example `/product/search`) instead of nesting it below the resource identifier (for example `/product/1/search`).
 
-TIP: See the Grails user guide on link:{userGuide}/theWebLayer.html#restfulMappings[Mapping REST Resources] for more information on controllering how URIs map to controllers.
+TIP: See the Grails user guide on link:{userGuide}/theWebLayer.html#restfulMappings[Mapping REST Resources] for more information on controlling how URIs map to controllers.
