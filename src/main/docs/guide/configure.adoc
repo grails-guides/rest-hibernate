@@ -29,7 +29,7 @@ include::{sourceDir}/grails-app/conf/application.yml[tags=envConfig,indent=0]
 
 Grails comes with three built in environments `development`, `test` and `production` corresponding to the different environments that the application will run in.
 
-To alter the configuration for the `development` environment for MySQL you can specify it under the `development` block:
+To alter this for MySQL you should specify the driver class name, username and password. In order to change it only for the `development` environment, you can specify it under the `development` block:
 
 [source,yaml]
 .grails-app/conf/application.yml
