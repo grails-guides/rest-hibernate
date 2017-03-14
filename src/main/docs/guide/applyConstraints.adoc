@@ -28,7 +28,7 @@ Then ensure the `ProductSpec` extends the `HibernateSpec` base class:
 [source,groovy]
 .src/test/groovy/hibernate/example/ProductSpec.groovy
 ----
-include::{sourceDir}/src/test/groovy/hibernate/example/ProductSpec.groovy[tags=mongoSpec,indent=0]
+include::{sourceDir}/src/test/groovy/hibernate/example/ProductSpec.groovy[tags=hibernateSpec,indent=0]
 ----
 
 The `HibernateSpec` super class will wrap each test method in a transaction that is rolled back at the end of the test ensuring cleanup between tests.
@@ -51,7 +51,7 @@ First lets write a test for the invalid case. You can do so using Spock `when` a
 include::{sourceDir}/src/test/groovy/hibernate/example/ProductSpec.groovy[tags=testInvalid,indent=0]
 ----
 
-The above example sets the `name` to a blank value and the `price` to a negative value and attempts to save the instance using the link:{mongodbGormApi}/org/grails/datastore/gorm/GormEntity.html#save()[save()] method.
+The above example sets the `name` to a blank value and the `price` to a negative value and attempts to save the instance using the link:{hibernateGormApi}/org/grails/datastore/gorm/GormEntity.html#save()[save()] method.
 
 The `then` block asserts that the object is invalid and was not saved.
 

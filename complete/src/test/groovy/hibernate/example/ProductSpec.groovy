@@ -9,10 +9,10 @@ import grails.test.hibernate.*
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
 //tag::spec[]
-//tag::mongoSpec[]
+//tag::hibernateSpec[]
 @TestFor(Product)
 class ProductSpec extends HibernateSpec {
-//end::mongoSpec[]
+//end::hibernateSpec[]
 
     //tag::testName[]
     void "test domain class validation"() {
