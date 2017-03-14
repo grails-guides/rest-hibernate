@@ -19,18 +19,7 @@ And then altering the configuration found in `grails-app/conf/application.yml`. 
 include::{sourceDir}/grails-app/conf/application.yml[tags=dataSourceConfig,indent=0]
 ----
 
-To alter this for MySQL you should specify the driver class name, username and password:
-
-[source,yaml]
-.grails-app/conf/application.yml
-----
-dataSource:
-    driverClassName: com.mysql.jdbc.Driver
-    username: sa
-    password:
-----
-
-You will notice that there is environment specific configuration to specify the JDBC URL:
+You will notice that there is environment specific configuration:
 
 [source,yaml]
 .grails-app/conf/application.yml
@@ -40,14 +29,17 @@ include::{sourceDir}/grails-app/conf/application.yml[tags=envConfig,indent=0]
 
 Grails comes with three built in environments `development`, `test` and `production` corresponding to the different environments that the application will run in.
 
-To alter the configuration for the `development` environment for MySQL you can specify it under the `development` block:
+To alter this for MySQL you should specify the driver class name, username and password. In order to change it only for the `development` environment, you can specify it under the `development` block:
 
 [source,yaml]
 .grails-app/conf/application.yml
 ----
 development:
     dataSource:
+        driverClassName: com.mysql.jdbc.Driver
         dbCreate: create-drop
         url: jdbc:mysql://localhost/test
+        username: xxxxx
+        password: yyyyy
 ----
 
