@@ -1,5 +1,8 @@
 package hibernate.example
 
+import grails.compiler.GrailsCompileStatic
+
+@GrailsCompileStatic
 class Product {
 
     String name

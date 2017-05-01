@@ -1,18 +1,21 @@
 package hibernate.example
 
-//tag::controller[]
-import grails.rest.*
-import grails.converters.*
+import grails.rest.RestfulController
 
+//tag::controller[]
+import groovy.transform.CompileStatic
+
+@CompileStatic
 class ProductController extends RestfulController {
     static responseFormats = ['json', 'xml']
     ProductController() {
         super(Product)
     }
     //end::controller[]
-    //tag::searchAction[]
+
+    // tag::searchAction[]
     def search(String q, Integer max ) { // <1>
-        if(q) {
+        if (q) {
             //tag::whereQuery[]
             def query = Product.where { // <2>
                 name ==~ "%${q}%"
