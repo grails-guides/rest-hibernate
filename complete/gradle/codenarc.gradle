@@ -1,0 +1,7 @@
+apply plugin: 'codenarc'
+
+codenarc {
+    toolVersion = '0.27.0'
+    configFile = new File(projectDir, 'config/codenarc/rules.groovy')
+    reportFormat = 'html'
+}
