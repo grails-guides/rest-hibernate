@@ -1,18 +1,13 @@
 package hibernate.example
 
 //tag::imports[]
-import grails.test.mixin.TestFor
 import grails.test.hibernate.HibernateSpec
 
 //end::imports[]
 
-/**
- * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
- */
 //tag::spec[]
 //tag::hibernateSpec[]
 @SuppressWarnings(['MethodName', 'DuplicateNumberLiteral'])
-@TestFor(Product)
 class ProductSpec extends HibernateSpec {
 //end::hibernateSpec[]
 

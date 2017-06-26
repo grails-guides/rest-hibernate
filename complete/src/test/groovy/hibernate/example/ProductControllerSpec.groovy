@@ -2,12 +2,11 @@ package hibernate.example
 
 import grails.plugin.json.view.mvc.JsonViewResolver
 import grails.test.hibernate.HibernateSpec
-import grails.test.mixin.TestFor
+import grails.testing.web.controllers.ControllerUnitTest
 
 //tag::spec[]
 @SuppressWarnings('MethodName')
-@TestFor(ProductController)
-class ProductControllerSpec extends HibernateSpec {
+class ProductControllerSpec extends HibernateSpec implements ControllerUnitTest<ProductController> {
 //end::spec[]
 
     //tag::config[]
