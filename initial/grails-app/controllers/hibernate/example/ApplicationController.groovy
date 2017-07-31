@@ -1,6 +1,9 @@
 package hibernate.example
 
 import grails.core.GrailsApplication
+import grails.plugins.GrailsPluginManager
+import grails.plugins.PluginManagerAware
+import groovy.transform.CompileStatic
 
 @CompileStatic
 class ApplicationController implements PluginManagerAware {
