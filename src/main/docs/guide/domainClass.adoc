@@ -16,14 +16,7 @@ A domain class is a simple Groovy class and you can represent each column of a t
 [source,groovy]
 .grails-app/domain/hibernate/example/Product.groovy
 ----
-package hibernate.example
-
-import grails.compiler.GrailsCompileStatic
-
-@GrailsCompileStatic
-class Product {
-    String name
-    Double price
+include::{sourceDir}/grails-app/domain/hibernate/example/Product.groovy[indent=0,lines="1..9"]
 }
 ----
 
