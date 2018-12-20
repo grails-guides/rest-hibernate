@@ -64,4 +64,5 @@ dependencies {
 
 bootRun {
     jvmArgs = ['-Dspring.output.ansi.enabled=always']
+    sourceResources sourceSets.main
 }
