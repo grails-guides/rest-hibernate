@@ -207,8 +207,7 @@ ruleset {
     GrailsMassAssignment 
     GrailsPublicControllerMethod 
     GrailsServletContextReference 
-    GrailsSessionReference   // DEPRECATED
-    GrailsStatelessService 
+    GrailsStatelessService
     
     // rulesets/groovyism.xml
     AssignCollectionSort 
@@ -262,20 +261,20 @@ ruleset {
     // rulesets/junit.xml
     ChainedTest 
     CoupledTestCase 
-    JUnitAssertAlwaysFails 
-    JUnitAssertAlwaysSucceeds 
-    JUnitFailWithoutMessage 
-    JUnitLostTest 
-    JUnitPublicField 
-    JUnitPublicNonTestMethod 
-    JUnitPublicProperty 
-    JUnitSetUpCallsSuper 
-    JUnitStyleAssertions 
-    JUnitTearDownCallsSuper 
-    JUnitTestMethodWithoutAssert 
-    JUnitUnnecessarySetUp 
-    JUnitUnnecessaryTearDown 
-    JUnitUnnecessaryThrowsException 
+//    JUnitAssertAlwaysFails
+//    JUnitAssertAlwaysSucceeds
+//    JUnitFailWithoutMessage
+//    JUnitLostTest
+//    JUnitPublicField
+//    JUnitPublicNonTestMethod
+//    JUnitPublicProperty
+//    JUnitSetUpCallsSuper
+//    JUnitStyleAssertions
+//    JUnitTearDownCallsSuper
+//    JUnitTestMethodWithoutAssert
+//    JUnitUnnecessarySetUp
+//    JUnitUnnecessaryTearDown
+//    JUnitUnnecessaryThrowsException
     SpockIgnoreRestUsed 
     UnnecessaryFail 
     UseAssertEqualsInsteadOfAssertTrue 
@@ -331,7 +330,6 @@ ruleset {
     SerializableClassMustDefineSerialVersionUID 
     
     // rulesets/size.xml
-    AbcComplexity   // DEPRECATED: Use the AbcMetric rule instead. Requires the GMetrics jar
     AbcMetric   // Requires the GMetrics jar
     ClassSize 
     CrapMetric   // Requires the GMetrics jar and a Cobertura coverage file
