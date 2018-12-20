@@ -15,19 +15,12 @@ class ProductControllerSpec extends HibernateSpec implements ControllerUnitTest<
     }
     //end::config[]
 
-    //tag::setup[]
-    void setup() {
-        Product.saveAll(
-            new Product(name: 'Apple', price: 2.0),
-            new Product(name: 'Orange', price: 3.0),
-            new Product(name: 'Banana', price: 1.0),
-            new Product(name: 'Cake', price: 4.0)
-        )
-    }
-    //end::setup[]
-
     //tag::test[]
     void 'test the search action finds results'() {
+        given:
+        controller.productService = Stub(ProductService) {
+            findByNameLike(_, _) >> [new Product(name: 'Apple', price: 2.0)]
+        }
         when: 'A query is executed that finds results'
         controller.search('pp', 10)
 

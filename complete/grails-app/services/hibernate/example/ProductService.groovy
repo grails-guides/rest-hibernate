@@ -6,4 +6,9 @@ import grails.gorm.services.Service
 interface ProductService {
 
     List<Product> findByNameLike(String name, Map args)
+<<<<<<< HEAD
 }
+=======
+
+}
+>>>>>>> Use GORM Data Service
