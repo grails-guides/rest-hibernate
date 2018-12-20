@@ -11,18 +11,14 @@ class ProductController extends RestfulController {
     ProductController() {
         super(Product)
     }
+    ProductService productService
     //end::controller[]
 
     // tag::searchAction[]
     def search(String q, Integer max ) { // <1>
         if (q) {
-            //tag::whereQuery[]
-            def query = Product.where { // <2>
-                name ==~ "%${q}%"
-            }
-            //end::whereQuery[]
             //tag::respond[]
-            respond query.list(max: Math.min( max ?: 10, 100)) // <3>
+            respond productService.findByNameLike("%${q}%".toString(), [max: Math.min( max ?: 10, 100)]) // <3>
             //end::respond[]
         }
         else {
