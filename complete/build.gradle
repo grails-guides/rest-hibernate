@@ -57,7 +57,7 @@ dependencies {
     profile "org.grails.profiles:rest-api"
     runtime "org.glassfish.web:el-impl:2.1.2-b03"
     runtime "com.h2database:h2"
-    testCompile "io.micronaut:micronaut-http-client:1.0.2"
+    testCompile "io.micronaut:micronaut-http-client"
     runtime "org.apache.tomcat:tomcat-jdbc"
     testCompile "org.grails:grails-gorm-testing-support"
     testCompile "org.grails:grails-web-testing-support"
