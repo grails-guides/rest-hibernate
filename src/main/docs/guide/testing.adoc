@@ -27,16 +27,6 @@ include::{sourceDir}/src/test/groovy/hibernate/example/ProductControllerSpec.gro
 
 The `doWithSpring` block is used to register additional Spring configuration (beans) for the context of the test. In this case we wish to test the controller responds with JSON views, so a `jsonSmartViewResolver` bean is registered.
 
-Next in order to prepare the test we setup some test data using the `setup` method:
-
-[source,groovy]
-.src/test/groovy/hibernate/example/ProductControllerSpec.groovy
-----
-include::{sourceDir}/src/test/groovy/hibernate/example/ProductControllerSpec.groovy[tags=setup,indent=0]
-----
-
-The `setup` method uses the `saveAll` method to save multiple domain classes to serve as test data.
-
 Finally, we are ready to implement the test and can perform a search by executing the `search` method, passing appropriate arguments and verifying the JSON written to the response:
 
 [source,groovy]
