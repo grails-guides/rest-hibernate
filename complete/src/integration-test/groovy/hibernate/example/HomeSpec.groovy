@@ -24,11 +24,11 @@ class HomeSpec extends Specification {
         this.client  = HttpClient.create(baseUrl.toURL())
     }
 
-    void "Test the homepage"() {
-        when:"The home page is requested"
-        HttpResponse<Map> response = client.toBlocking().exchange(HttpRequest.GET("/"), Map)
+    void 'Test the homepage'() {
+        when: 'The home page is requested'
+        HttpResponse<Map> response = client.toBlocking().exchange(HttpRequest.GET('/'), Map)
 
-        then:"The response is correct"
+        then: 'The response is correct'
         response.status == HttpStatus.OK
         response.header(HttpHeaders.CONTENT_TYPE) == 'application/json;charset=UTF-8'
         response.body().message == 'Welcome to Grails!'
