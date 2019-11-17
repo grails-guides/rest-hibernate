@@ -20,14 +20,13 @@ class ProductFunctionalSpec extends Specification {
     @AutoCleanup
     HttpClient client
 
+    @Shared
+    String resourcePath = '/products'
+
     @OnceBefore
     void init() {
         String baseUrl = "http://localhost:$serverPort"
         this.client  = HttpClient.create(new URL(baseUrl))
-    }
-
-    String getResourcePath() {
-        '/products'
     }
 
     Map getValidJson() {
@@ -38,15 +37,18 @@ class ProductFunctionalSpec extends Specification {
         [name: '', price: -1.0]
     }
 
+    @SuppressWarnings('MethodName')
     void 'Test the index action'() {
         when: 'The index action is requested'
-        HttpResponse<List<Map>> response = client.toBlocking().exchange(HttpRequest.GET(resourcePath), Argument.of(List, Map))
+        HttpResponse<List<Map>> response = client.toBlocking()
+                .exchange(HttpRequest.GET(resourcePath), Argument.of(List, Map))
 
         then: 'The response is correct'
         response.status == HttpStatus.OK
         response.body() == []
     }
 
+    @SuppressWarnings('MethodName')
     @Rollback
     void 'Test the save action correctly persists an instance'() {
         when: 'The save action is executed with no content'
@@ -78,6 +80,7 @@ class ProductFunctionalSpec extends Specification {
         assert response.status() == HttpStatus.NO_CONTENT
     }
 
+    @SuppressWarnings('MethodName')
     void 'Test the update action correctly updates an instance'() {
         when: 'The save action is executed with valid data'
         HttpResponse<Map> response = client.toBlocking().exchange(HttpRequest.POST(resourcePath, validJson), Map)
@@ -107,6 +110,7 @@ class ProductFunctionalSpec extends Specification {
         assert response.status() == HttpStatus.NO_CONTENT
     }
 
+    @SuppressWarnings('MethodName')
     void 'Test the show action correctly renders an instance'() {
         when: 'The save action is executed with valid data'
         HttpResponse<Map> response = client.toBlocking().exchange(HttpRequest.POST(resourcePath, validJson), Map)
@@ -128,6 +132,7 @@ class ProductFunctionalSpec extends Specification {
         client.toBlocking().exchange(HttpRequest.DELETE(path))
     }
 
+    @SuppressWarnings('MethodName')
     @Rollback
     void 'Test the delete action correctly deletes an instance'() {
         when: 'The save action is executed with valid data'

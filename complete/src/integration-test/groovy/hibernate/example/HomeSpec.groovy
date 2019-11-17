@@ -24,6 +24,7 @@ class HomeSpec extends Specification {
         this.client  = HttpClient.create(baseUrl.toURL())
     }
 
+    @SuppressWarnings('MethodName')
     void 'Test the homepage'() {
         when: 'The home page is requested'
         HttpResponse<Map> response = client.toBlocking().exchange(HttpRequest.GET('/'), Map)
