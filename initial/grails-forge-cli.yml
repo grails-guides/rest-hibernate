@@ -1,0 +1,8 @@
+applicationType: rest_api
+defaultPackage: example
+reloading: devtools
+sourceLanguage: groovy
+buildTool: gradle
+gormImpl: gorm-hibernate5
+servletImpl: spring-boot-starter-tomcat
+features: [app-name, base, database-migration, gorm-hibernate5, gradle, grails-application, grails-console, grails-dependencies, grails-gorm-testing-support, grails-gradle-plugin, grails-profiles, grails-url-mappings, grails-web, grails-wrapper, logback, mockito, postgres, readme, spock, spring-boot-autoconfigure, spring-boot-devtools, spring-boot-starter, spring-boot-starter-tomcat, spring-resources, testcontainers, views-json, views-json-testing-support, yaml]
