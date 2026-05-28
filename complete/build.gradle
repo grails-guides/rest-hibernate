@@ -84,6 +84,7 @@ dependencies {
     profile "org.apache.grails.profiles:rest-api"
     developmentOnly "org.springframework.boot:spring-boot-devtools" // Spring Boot DevTools may cause performance slowdowns or compatibility issues on larger applications
     implementation platform("org.apache.grails:grails-bom:$grailsVersion")
+    implementation "org.apache.groovy:groovy-dateutil" // Date.format(String) used in the .gson views
     implementation "org.apache.grails:grails-core"
     implementation "org.apache.grails:grails-data-hibernate5"
     implementation "org.apache.grails:grails-data-hibernate5-dbmigration"
@@ -109,8 +110,10 @@ dependencies {
     runtimeOnly "org.postgresql:postgresql"
     testImplementation "org.apache.grails:grails-testing-support-datamapping"
     testImplementation "org.apache.grails:grails-testing-support-views-gson"
+    testImplementation "org.apache.grails:grails-testing-support-web"
     testImplementation "org.mockito:mockito-core"
     testImplementation "org.spockframework:spock-core"
+    testImplementation platform("org.testcontainers:testcontainers-bom:1.20.4")
     testImplementation "org.testcontainers:postgresql"
     testImplementation "org.testcontainers:spock"
     testImplementation "org.testcontainers:testcontainers"
