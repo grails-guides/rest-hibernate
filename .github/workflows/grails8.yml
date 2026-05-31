@@ -1,0 +1,51 @@
+name: Grails 8 CI
+
+on:
+  push:
+    branches: [ grails8 ]
+  pull_request:
+    branches: [ grails8 ]
+
+# Cancel superseded runs on the same ref to save runner minutes.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    # ubuntu-latest ships a running Docker daemon, which Testcontainers
+    # (the PostgreSQL container used by @Integration specs) requires.
+    strategy:
+      fail-fast: false
+      matrix:
+        app: [ initial, complete ]
+      # initial/complete both need the same Docker-backed tests.
+      # The initial/complete split is the guide's convention: readers
+      # start from initial/ and apply the guide steps to reach complete/.
+    name: ${{ matrix.app }} (test + integrationTest)
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Unit + integration tests
+        working-directory: ${{ matrix.app }}
+        run: |
+          chmod +x gradlew
+          ./gradlew test integrationTest --console=plain --stacktrace
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports-${{ matrix.app }}
+          path: ${{ matrix.app }}/build/reports/tests/
+          if-no-files-found: ignore
